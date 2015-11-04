@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{6c81b1e6-fe24-45cc-bbe6-0fc0711f779f}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{4bb0a320-69ad-4122-9904-b621097bf2f7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{2ce3ea77-e9ff-4827-ad9e-5a11937ec355}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{9d4d4f69-e7c2-407c-8308-922b680fb518}</UniqueIdentifier>
+      <Extensions>*.mak</Extensions>
+    </Filter>
+    <Filter Include="Source files\Core">
+      <UniqueIdentifier>{49952989-119b-4065-b00f-6b8995892dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Actuator">
+      <UniqueIdentifier>{4d13c0f4-3dff-43e2-8225-7026632fd837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Display">
+      <UniqueIdentifier>{53296e60-5d93-426f-9c83-73bf8c72d1c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Messages">
+      <UniqueIdentifier>{52331acb-499f-454c-b38b-858e99c2121b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Regulator">
+      <UniqueIdentifier>{e0d4d2ce-c1a9-4178-ae1a-0ce68ee081dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Sensor">
+      <UniqueIdentifier>{0324d9e2-2fd9-4882-8e30-16a5c19c9357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\regulator">
+      <UniqueIdentifier>{f1401f87-95bb-4c16-9715-664dfac4dc5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Actuator">
+      <UniqueIdentifier>{07b147da-90b2-4348-82f5-cc47ccd0dc23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Core">
+      <UniqueIdentifier>{fc12afef-6135-4f2a-a8b9-398784e16fd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Display">
+      <UniqueIdentifier>{9541a098-8e37-4a61-81bb-182ecc1a656e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Messages">
+      <UniqueIdentifier>{e05a6af4-67e7-4057-8b64-b6d260b709c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Sensor">
+      <UniqueIdentifier>{5ab1b3cf-d988-497b-b0f2-39babb44dc0a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\app\src\core\BaseMessage.cpp">
+      <Filter>Source files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\core\MessageReceiver.cpp">
+      <Filter>Source files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\core\MessageSender.cpp">
+      <Filter>Source files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\core\PeriodicTimer.cpp">
+      <Filter>Source files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\core\TemperatureControllerApplication.cpp">
+      <Filter>Source files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\messages\ControlMessage.cpp">
+      <Filter>Source files\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\messages\SetupMessage.cpp">
+      <Filter>Source files\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\messages\TemperatureMessage.cpp">
+      <Filter>Source files\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\comp_mock\src\sensor\SensorMock.cpp">
+      <Filter>Source files\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="app\src\Main.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\comp_mock\src\actuator\ActuatorMock.cpp">
+      <Filter>Source files\Actuator</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\comp_mock\src\display\DisplayMock.cpp">
+      <Filter>Source files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\comp_mock\src\regulator\RegulatorMock.cpp">
+      <Filter>Source files\Regulator</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\sensor\SensorModule.cpp">
+      <Filter>Source files\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\regulator\RegulatorModule.cpp">
+      <Filter>Source files\Regulator</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\display\DisplayModule.cpp">
+      <Filter>Source files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\actuator\ActuatorModule.cpp">
+      <Filter>Source files\Actuator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\app\inc\actuator\ActuatorInterface.h">
+      <Filter>Header files\Actuator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\actuator\ActuatorModule.h">
+      <Filter>Header files\Actuator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\BaseMessage.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\MessageReceiver.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\MessageSender.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\PeriodicTimer.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\State.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\TemperatureControllerApplication.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\display\DisplayInterface.h">
+      <Filter>Header files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\display\DisplayModule.h">
+      <Filter>Header files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\messages\ControlMessage.h">
+      <Filter>Header files\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\messages\SetupMessage.h">
+      <Filter>Header files\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\messages\TemperatureMessage.h">
+      <Filter>Header files\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\regulator\RegulatorInterface.h">
+      <Filter>Header files\regulator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\regulator\RegulatorModule.h">
+      <Filter>Header files\regulator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\sensor\SensorInterface.h">
+      <Filter>Header files\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\sensor\SensorModule.h">
+      <Filter>Header files\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\common.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_mock\inc\actuator\ActuatorMock.h">
+      <Filter>Header files\Actuator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_mock\inc\display\DisplayMock.h">
+      <Filter>Header files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_mock\inc\regulator\RegulatorMock.h">
+      <Filter>Header files\regulator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_mock\inc\sensor\SensorMock.h">
+      <Filter>Header files\Sensor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
