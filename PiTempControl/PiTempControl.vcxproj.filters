@@ -2,59 +2,65 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source files">
-      <UniqueIdentifier>{6c81b1e6-fe24-45cc-bbe6-0fc0711f779f}</UniqueIdentifier>
+      <UniqueIdentifier>{38359e6a-e7d0-4471-97bb-8763faf08b0a}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header files">
-      <UniqueIdentifier>{4bb0a320-69ad-4122-9904-b621097bf2f7}</UniqueIdentifier>
+      <UniqueIdentifier>{73152660-7ea0-408d-921a-c0f06b61ba57}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource files">
-      <UniqueIdentifier>{2ce3ea77-e9ff-4827-ad9e-5a11937ec355}</UniqueIdentifier>
+      <UniqueIdentifier>{2b7d6098-c3e4-477a-adcd-7fdf3923a749}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Make files">
-      <UniqueIdentifier>{9d4d4f69-e7c2-407c-8308-922b680fb518}</UniqueIdentifier>
+      <UniqueIdentifier>{bc94c592-72c8-469b-9101-6d484271f53c}</UniqueIdentifier>
       <Extensions>*.mak</Extensions>
     </Filter>
-    <Filter Include="Source files\Core">
-      <UniqueIdentifier>{49952989-119b-4065-b00f-6b8995892dd7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\Actuator">
-      <UniqueIdentifier>{4d13c0f4-3dff-43e2-8225-7026632fd837}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\Display">
-      <UniqueIdentifier>{53296e60-5d93-426f-9c83-73bf8c72d1c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\Messages">
-      <UniqueIdentifier>{52331acb-499f-454c-b38b-858e99c2121b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\Regulator">
-      <UniqueIdentifier>{e0d4d2ce-c1a9-4178-ae1a-0ce68ee081dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\Sensor">
-      <UniqueIdentifier>{0324d9e2-2fd9-4882-8e30-16a5c19c9357}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header files\regulator">
-      <UniqueIdentifier>{f1401f87-95bb-4c16-9715-664dfac4dc5f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header files\Actuator">
-      <UniqueIdentifier>{07b147da-90b2-4348-82f5-cc47ccd0dc23}</UniqueIdentifier>
+      <UniqueIdentifier>{33881449-a7ab-46cf-bf84-c7c5a8a72ebb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Core">
-      <UniqueIdentifier>{fc12afef-6135-4f2a-a8b9-398784e16fd6}</UniqueIdentifier>
+      <UniqueIdentifier>{f2e1bd03-55f7-4b3b-a1d3-6911ec0a2ea9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Display">
-      <UniqueIdentifier>{9541a098-8e37-4a61-81bb-182ecc1a656e}</UniqueIdentifier>
+      <UniqueIdentifier>{18a0593c-b51c-4697-8508-131d4d15177d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Messages">
-      <UniqueIdentifier>{e05a6af4-67e7-4057-8b64-b6d260b709c3}</UniqueIdentifier>
+      <UniqueIdentifier>{b4b3b606-cd99-4423-846d-d3c7b48317eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Regulator">
+      <UniqueIdentifier>{015589bb-49fa-49bc-8d50-280cdf574f71}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Sensor">
-      <UniqueIdentifier>{5ab1b3cf-d988-497b-b0f2-39babb44dc0a}</UniqueIdentifier>
+      <UniqueIdentifier>{e043f478-bd80-4322-ae42-a1b623685c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Actuator">
+      <UniqueIdentifier>{0188fac7-5051-4e06-8539-6c16eadce08b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Core">
+      <UniqueIdentifier>{eaaddc52-8603-4b99-825b-7a3efa2d17c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Display">
+      <UniqueIdentifier>{91913e7c-40eb-4cc4-886c-68fc57018a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Messages">
+      <UniqueIdentifier>{b32f1a23-81ac-4c6c-b451-92c126c055dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Regulator">
+      <UniqueIdentifier>{ae4cb25f-47d5-4998-98ba-735c8520ee4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Sensor">
+      <UniqueIdentifier>{75230855-2275-438e-addc-de7e590dd3fe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="app\src\Main.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\app\src\actuator\ActuatorModule.cpp">
+      <Filter>Source files\Actuator</Filter>
+    </ClCompile>
     <ClCompile Include="lib\app\src\core\BaseMessage.cpp">
       <Filter>Source files\Core</Filter>
     </ClCompile>
@@ -70,6 +76,9 @@
     <ClCompile Include="lib\app\src\core\TemperatureControllerApplication.cpp">
       <Filter>Source files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="lib\app\src\display\DisplayModule.cpp">
+      <Filter>Source files\Display</Filter>
+    </ClCompile>
     <ClCompile Include="lib\app\src\messages\ControlMessage.cpp">
       <Filter>Source files\Messages</Filter>
     </ClCompile>
@@ -79,11 +88,11 @@
     <ClCompile Include="lib\app\src\messages\TemperatureMessage.cpp">
       <Filter>Source files\Messages</Filter>
     </ClCompile>
-    <ClCompile Include="lib\comp_mock\src\sensor\SensorMock.cpp">
-      <Filter>Source files\Sensor</Filter>
+    <ClCompile Include="lib\app\src\regulator\RegulatorModule.cpp">
+      <Filter>Source files\Regulator</Filter>
     </ClCompile>
-    <ClCompile Include="app\src\Main.cpp">
-      <Filter>Source files</Filter>
+    <ClCompile Include="lib\app\src\sensor\SensorModule.cpp">
+      <Filter>Source files\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="lib\comp_mock\src\actuator\ActuatorMock.cpp">
       <Filter>Source files\Actuator</Filter>
@@ -94,17 +103,8 @@
     <ClCompile Include="lib\comp_mock\src\regulator\RegulatorMock.cpp">
       <Filter>Source files\Regulator</Filter>
     </ClCompile>
-    <ClCompile Include="lib\app\src\sensor\SensorModule.cpp">
+    <ClCompile Include="lib\comp_mock\src\sensor\SensorMock.cpp">
       <Filter>Source files\Sensor</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\app\src\regulator\RegulatorModule.cpp">
-      <Filter>Source files\Regulator</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\app\src\display\DisplayModule.cpp">
-      <Filter>Source files\Display</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\app\src\actuator\ActuatorModule.cpp">
-      <Filter>Source files\Actuator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,10 +157,10 @@
       <Filter>Header files\Messages</Filter>
     </ClInclude>
     <ClInclude Include="lib\app\inc\regulator\RegulatorInterface.h">
-      <Filter>Header files\regulator</Filter>
+      <Filter>Header files\Regulator</Filter>
     </ClInclude>
     <ClInclude Include="lib\app\inc\regulator\RegulatorModule.h">
-      <Filter>Header files\regulator</Filter>
+      <Filter>Header files\Regulator</Filter>
     </ClInclude>
     <ClInclude Include="lib\app\inc\sensor\SensorInterface.h">
       <Filter>Header files\Sensor</Filter>
@@ -178,7 +178,7 @@
       <Filter>Header files\Display</Filter>
     </ClInclude>
     <ClInclude Include="lib\comp_mock\inc\regulator\RegulatorMock.h">
-      <Filter>Header files\regulator</Filter>
+      <Filter>Header files\Regulator</Filter>
     </ClInclude>
     <ClInclude Include="lib\comp_mock\inc\sensor\SensorMock.h">
       <Filter>Header files\Sensor</Filter>

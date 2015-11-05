@@ -20,8 +20,8 @@ ADDITIONAL_LINKER_INPUTS :=
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O3 -pthread
-CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O3 -pthread
+CFLAGS := -ggdb -ffunction-sections -O3
+CXXFLAGS := -ggdb -ffunction-sections -O3
 ASFLAGS := 
 LDFLAGS := -Wl,-gc-sections
 COMMONFLAGS := 

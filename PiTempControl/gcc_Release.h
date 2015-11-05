@@ -11,9 +11,6 @@
 #ifndef __HQ_FBIT__
 #define __HQ_FBIT__ 15
 #endif
-#ifndef __cpp_attributes
-#define __cpp_attributes 200809
-#endif
 #ifndef __UINT_LEAST16_MAX__
 #define __UINT_LEAST16_MAX__ 65535
 #endif
@@ -65,9 +62,6 @@
 #ifndef __WINT_MAX__
 #define __WINT_MAX__ 4294967295U
 #endif
-#ifndef __cpp_static_assert
-#define __cpp_static_assert 200410
-#endif
 #ifndef __USFRACT_FBIT__
 #define __USFRACT_FBIT__ 8
 #endif
@@ -115,9 +109,6 @@
 #endif
 #ifndef __FRACT_FBIT__
 #define __FRACT_FBIT__ 15
-#endif
-#ifndef __cpp_variadic_templates
-#define __cpp_variadic_templates 200704
 #endif
 #ifndef __UINT_FAST64_MAX__
 #define __UINT_FAST64_MAX__ 18446744073709551615ULL
@@ -197,9 +188,6 @@
 #ifndef __DEC32_EPSILON__
 #define __DEC32_EPSILON__ 1E-6DF
 #endif
-#ifndef __OPTIMIZE__
-#define __OPTIMIZE__ 1
-#endif
 #ifndef __CHAR_UNSIGNED__
 #define __CHAR_UNSIGNED__ 1
 #endif
@@ -244,9 +232,6 @@
 #endif
 #ifndef __SIZEOF_POINTER__
 #define __SIZEOF_POINTER__ 4
-#endif
-#ifndef NDEBUG
-#define NDEBUG 1
 #endif
 #ifndef __GCC_ATOMIC_CHAR16_T_LOCK_FREE
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -332,9 +317,6 @@
 #ifndef __gnu_linux__
 #define __gnu_linux__ 1
 #endif
-#ifndef RELEASE
-#define RELEASE 1
-#endif
 #ifndef __ARM_PCS_VFP
 #define __ARM_PCS_VFP 1
 #endif
@@ -343,9 +325,6 @@
 #endif
 #ifndef __ULACCUM_IBIT__
 #define __ULACCUM_IBIT__ 32
-#endif
-#ifndef _REENTRANT
-#define _REENTRANT 1
 #endif
 #ifndef __UACCUM_EPSILON__
 #define __UACCUM_EPSILON__ 0x1P-16UK
@@ -371,9 +350,6 @@
 #ifndef __BIGGEST_ALIGNMENT__
 #define __BIGGEST_ALIGNMENT__ 8
 #endif
-#ifndef __GNUC_STDC_INLINE__
-#define __GNUC_STDC_INLINE__ 1
-#endif
 #ifndef __DQ_IBIT__
 #define __DQ_IBIT__ 0
 #endif
@@ -382,9 +358,6 @@
 #endif
 #ifndef __ULFRACT_IBIT__
 #define __ULFRACT_IBIT__ 0
-#endif
-#ifndef __cpp_raw_strings
-#define __cpp_raw_strings 200710
 #endif
 #ifndef __INT_FAST32_MAX__
 #define __INT_FAST32_MAX__ 2147483647
@@ -410,9 +383,6 @@
 #ifndef __INT_FAST16_TYPE__
 #define __INT_FAST16_TYPE__ int
 #endif
-#ifndef __STRICT_ANSI__
-#define __STRICT_ANSI__ 1
-#endif
 #ifndef __LDBL_HAS_DENORM__
 #define __LDBL_HAS_DENORM__ 1
 #endif
@@ -421,7 +391,7 @@
 #endif
 //VS2005-2012 treats all files as C++, while VS2013+ can treat C files correctly.
 #if defined(_MSC_VER) && (_MSC_VER < 1800 || defined(__cplusplus))
-#define __cplusplus 201103L
+#define __cplusplus 199711L
 #endif
 #ifndef __DEC128_MAX__
 #define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
@@ -477,9 +447,6 @@
 #ifndef __ULACCUM_MAX__
 #define __ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK
 #endif
-#ifndef __cpp_rvalue_reference
-#define __cpp_rvalue_reference 200610
-#endif
 #ifndef __SIZEOF_WINT_T__
 #define __SIZEOF_WINT_T__ 4
 #endif
@@ -506,9 +473,6 @@
 #endif
 #ifndef __UFRACT_IBIT__
 #define __UFRACT_IBIT__ 0
-#endif
-#ifndef __cpp_lambdas
-#define __cpp_lambdas 200907
 #endif
 #ifndef __ARM_FEATURE_QBIT
 #define __ARM_FEATURE_QBIT 1
@@ -558,6 +522,9 @@
 #ifndef __UHA_FBIT__
 #define __UHA_FBIT__ 8
 #endif
+#ifndef __NO_INLINE__
+#define __NO_INLINE__ 1
+#endif
 #ifndef __SFRACT_MIN__
 #define __SFRACT_MIN__ (-0.5HR-0.5HR)
 #endif
@@ -572,9 +539,6 @@
 #endif
 #ifndef __ULLFRACT_FBIT__
 #define __ULLFRACT_FBIT__ 64
-#endif
-#ifndef __cpp_unicode_characters
-#define __cpp_unicode_characters 200704
 #endif
 #ifndef __FRACT_EPSILON__
 #define __FRACT_EPSILON__ 0x1P-15R
@@ -629,6 +593,9 @@
 #endif
 #ifndef __UINT_LEAST16_TYPE__
 #define __UINT_LEAST16_TYPE__ short unsigned int
+#endif
+#ifndef unix
+#define unix 1
 #endif
 #ifndef __INT16_MAX__
 #define __INT16_MAX__ 32767
@@ -720,9 +687,6 @@
 #ifndef __unix
 #define __unix 1
 #endif
-#ifndef __cpp_unicode_literals
-#define __cpp_unicode_literals 200710
-#endif
 #ifndef __USA_FBIT__
 #define __USA_FBIT__ 16
 #endif
@@ -789,6 +753,9 @@
 #ifndef __QQ_FBIT__
 #define __QQ_FBIT__ 7
 #endif
+#ifndef linux
+#define linux 1
+#endif
 #ifndef __UTA_IBIT__
 #define __UTA_IBIT__ 64
 #endif
@@ -830,9 +797,6 @@
 #endif
 #ifndef __DEC64_MIN_EXP__
 #define __DEC64_MIN_EXP__ (-382)
-#endif
-#ifndef __cpp_decltype
-#define __cpp_decltype 200707
 #endif
 #ifndef __INT_FAST64_MAX__
 #define __INT_FAST64_MAX__ 9223372036854775807LL
@@ -966,9 +930,6 @@
 #ifndef __INTMAX_MAX__
 #define __INTMAX_MAX__ 9223372036854775807LL
 #endif
-#ifndef __cpp_alias_templates
-#define __cpp_alias_templates 200704
-#endif
 #ifndef __BYTE_ORDER__
 #define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
 #endif
@@ -989,9 +950,6 @@
 #endif
 #ifndef __FLT_MAX__
 #define __FLT_MAX__ 3.4028234663852886e+38F
-#endif
-#ifndef __cpp_constexpr
-#define __cpp_constexpr 200704
 #endif
 #ifndef __USACCUM_FBIT__
 #define __USACCUM_FBIT__ 8
@@ -1074,9 +1032,6 @@
 #ifndef __ULACCUM_EPSILON__
 #define __ULACCUM_EPSILON__ 0x1P-32ULK
 #endif
-#ifndef __cpp_user_defined_literals
-#define __cpp_user_defined_literals 200809
-#endif
 #ifndef __SACCUM_IBIT__
 #define __SACCUM_IBIT__ 8
 #endif
@@ -1091,6 +1046,9 @@
 #endif
 #ifndef __UINT_FAST16_MAX__
 #define __UINT_FAST16_MAX__ 4294967295U
+#endif
+#ifndef __GNUC_GNU_INLINE__
+#define __GNUC_GNU_INLINE__ 1
 #endif
 #ifndef __GCC_ATOMIC_SHORT_LOCK_FREE
 #define __GCC_ATOMIC_SHORT_LOCK_FREE 1
@@ -1121,6 +1079,12 @@
 #endif
 #ifndef __ATOMIC_RELEASE
 #define __ATOMIC_RELEASE 3
+#endif
+#ifndef NDEBUG
+#define NDEBUG 
+#endif
+#ifndef RELEASE
+#define RELEASE 
 #endif
 #endif
 

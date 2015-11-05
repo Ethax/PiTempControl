@@ -12,16 +12,16 @@ AR := ar
 OBJCOPY := objcopy
 
 #Additional flags
-PREPROCESSOR_MACROS := DEBUG SUBSTITUTE_HARDWARE
-INCLUDE_DIRS := /home/pi/Workspace/PiTempControl
+PREPROCESSOR_MACROS := DEBUG
+INCLUDE_DIRS := 
 LIBRARY_DIRS := 
 LIBRARY_NAMES := 
 ADDITIONAL_LINKER_INPUTS := 
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread
-CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread
+CFLAGS := -ggdb -ffunction-sections -O0
+CXXFLAGS := -ggdb -ffunction-sections -O0
 ASFLAGS := 
 LDFLAGS := -Wl,-gc-sections
 COMMONFLAGS := 
