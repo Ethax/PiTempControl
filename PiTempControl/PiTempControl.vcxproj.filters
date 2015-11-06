@@ -109,6 +109,12 @@
     <ClCompile Include="lib\comp_impl\src\actuator\ActuatorImpl.cpp">
       <Filter>Source files\Actuator</Filter>
     </ClCompile>
+    <ClCompile Include="lib\comp_impl\src\sensor\SensorImpl.cpp">
+      <Filter>Source files\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\comp_impl\src\sensor\SHT7xComm.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
@@ -194,6 +200,12 @@
     </ClInclude>
     <ClInclude Include="lib\app\inc\core\AppException.h">
       <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_impl\inc\sensor\SensorImpl.h">
+      <Filter>Header files\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_impl\inc\sensor\SHT7xComm.h">
+      <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

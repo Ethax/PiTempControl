@@ -16,7 +16,7 @@ ActuatorImpl::~ActuatorImpl() {}
  */
 void ActuatorImpl::initialize() {
 	if(!bcm2835_init())
-		throw AppException("ActuatorImpl: BCM2835 initialization failed.");
+		throw AppException("BCM2835 initialization failed at Actuator module.");
 
 	/* A GPIO 17 és a GPIO 18 beállítása kimeneteknek. */
 	bcm2835_gpio_fsel(RPI_GPIO_P1_11, BCM2835_GPIO_FSEL_OUTP);
@@ -41,5 +41,7 @@ void ActuatorImpl::setFanState(bool state) {
  * Lezárja a BCM2835 modult.
  */
 void ActuatorImpl::close() {
+	bcm2835_gpio_write(RPI_GPIO_P1_11, 0);
+	bcm2835_gpio_write(RPI_GPIO_P1_12, 0);
 	bcm2835_close();
 }

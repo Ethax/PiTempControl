@@ -13,10 +13,10 @@ void DisplayMock::refreshDisplay(void) {
  * Az utánzat alapértelmezett konstruktora.
  */
 DisplayMock::DisplayMock() :
-	setpointIndicator("[Setpoint:  N/A °C]"),
+	setpointIndicator("[Setpoint:  N/A \xC2\xB0""C]"),
 	heaterIndicator("[Heater: N/A]"),
 	fanIndicator("[Fan: N/A]"),
-	temperatureIndicator("[Temperature:  N/A °C]") {}
+	temperatureIndicator("[Temperature:  N/A \xC2\xB0""C]") {}
 
 /*
  * Az utánzat virtuális destruktora.
@@ -35,7 +35,7 @@ void DisplayMock::refreshActualTemperature(const float _temp) {
 	std::stringstream stream;
 	stream << '[' << color::modifier(color::FG_CYAN) << "Temperature: ";
 	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _temp;
-	stream << color::modifier(color::FG_DEFAULT) << " °C]";
+	stream << color::modifier(color::FG_DEFAULT) << " \xC2\xB0""C]";
 	temperatureIndicator = stream.str();
 	refreshDisplay();
 }
@@ -47,7 +47,7 @@ void DisplayMock::refreshSetpoint(const float _setpoint) {
 	std::stringstream stream;
 	stream << '[' << color::modifier(color::FG_CYAN) << "Setpoint: ";
 	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _setpoint;
-	stream << color::modifier(color::FG_DEFAULT) << " °C]";
+	stream << color::modifier(color::FG_DEFAULT) << " \xC2\xB0""C]";
 	setpointIndicator = stream.str();
 	refreshDisplay();
 }
