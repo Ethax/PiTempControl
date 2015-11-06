@@ -12,18 +12,18 @@ AR := ar
 OBJCOPY := objcopy
 
 #Additional flags
-PREPROCESSOR_MACROS := DEBUG
-INCLUDE_DIRS := 
+PREPROCESSOR_MACROS := DEBUG SUBSTITUTE_HARDWARE
+INCLUDE_DIRS := /home/pi/Workspace/PiTempControl
 LIBRARY_DIRS := 
 LIBRARY_NAMES := 
 ADDITIONAL_LINKER_INPUTS := 
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -ffunction-sections -O0
-CXXFLAGS := -ggdb -ffunction-sections -O0
+CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread -lbcm2835
+CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread -lbcm2835
 ASFLAGS := 
-LDFLAGS := -Wl,-gc-sections
+LDFLAGS := -Wl,-gc-sections -pthread -lbcm2835
 COMMONFLAGS := 
 
 START_GROUP := -Wl,--start-group

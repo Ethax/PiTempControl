@@ -106,6 +106,9 @@
     <ClCompile Include="lib\comp_mock\src\sensor\SensorMock.cpp">
       <Filter>Source files\Sensor</Filter>
     </ClCompile>
+    <ClCompile Include="lib\comp_impl\src\actuator\ActuatorImpl.cpp">
+      <Filter>Source files\Actuator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
@@ -182,6 +185,15 @@
     </ClInclude>
     <ClInclude Include="lib\comp_mock\inc\sensor\SensorMock.h">
       <Filter>Header files\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\TextColoring.h">
+      <Filter>Header files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\comp_impl\inc\actuator\ActuatorImpl.h">
+      <Filter>Header files\Actuator</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\app\inc\core\AppException.h">
+      <Filter>Header files\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

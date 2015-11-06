@@ -11,16 +11,21 @@ ActuatorMock::ActuatorMock() {}
 ActuatorMock::~ActuatorMock() {}
 
 /*
- * Jelzést ad az inicializáló metódus meghívásáról.
+ * Nem végez semmilyen mûveletet sem.
  */
 void ActuatorMock::initialize() {}
 
 /*
- * Kiírja a konzol képernyõre a fûtõszál új állapotát.
+ * Nem végez semmilyen mûveletet sem.
  */
 void ActuatorMock::setHeaterState(bool state) {}
 
 /*
- * Kiírja a konzol képernyõre a ventilátor új állapotát.
+ * Nem végez semmilyen mûveletet sem.
  */
 void ActuatorMock::setFanState(bool state) {}
+
+/*
+ * Nem végez semmilyen mûveletet sem.
+ */
+void ActuatorMock::close() {}

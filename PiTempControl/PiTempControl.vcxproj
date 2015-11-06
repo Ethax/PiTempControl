@@ -124,6 +124,7 @@
     <ClCompile Include="lib\app\src\messages\TemperatureMessage.cpp" />
     <ClCompile Include="lib\app\src\regulator\RegulatorModule.cpp" />
     <ClCompile Include="lib\app\src\sensor\SensorModule.cpp" />
+    <ClCompile Include="lib\comp_impl\src\actuator\ActuatorImpl.cpp" />
     <ClCompile Include="lib\comp_mock\src\actuator\ActuatorMock.cpp" />
     <ClCompile Include="lib\comp_mock\src\display\DisplayMock.cpp" />
     <ClCompile Include="lib\comp_mock\src\regulator\RegulatorMock.cpp" />
@@ -139,11 +140,13 @@
     <ClInclude Include="lib\app\inc\actuator\ActuatorModule.h" />
     <ClInclude Include="lib\app\inc\common.h" />
     <ClInclude Include="lib\app\inc\core\BaseMessage.h" />
+    <ClInclude Include="lib\app\inc\core\AppException.h" />
     <ClInclude Include="lib\app\inc\core\MessageReceiver.h" />
     <ClInclude Include="lib\app\inc\core\MessageSender.h" />
     <ClInclude Include="lib\app\inc\core\PeriodicTimer.h" />
     <ClInclude Include="lib\app\inc\core\State.h" />
     <ClInclude Include="lib\app\inc\core\TemperatureControllerApplication.h" />
+    <ClInclude Include="lib\app\inc\core\TextColoring.h" />
     <ClInclude Include="lib\app\inc\display\DisplayInterface.h" />
     <ClInclude Include="lib\app\inc\display\DisplayModule.h" />
     <ClInclude Include="lib\app\inc\messages\ControlMessage.h" />
@@ -153,6 +156,7 @@
     <ClInclude Include="lib\app\inc\regulator\RegulatorModule.h" />
     <ClInclude Include="lib\app\inc\sensor\SensorInterface.h" />
     <ClInclude Include="lib\app\inc\sensor\SensorModule.h" />
+    <ClInclude Include="lib\comp_impl\inc\actuator\ActuatorImpl.h" />
     <ClInclude Include="lib\comp_mock\inc\actuator\ActuatorMock.h" />
     <ClInclude Include="lib\comp_mock\inc\display\DisplayMock.h" />
     <ClInclude Include="lib\comp_mock\inc\regulator\RegulatorMock.h" />

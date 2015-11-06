@@ -23,23 +23,28 @@ public:
 	virtual ~ActuatorMock();
 
 	/**
-	 * @brief Jelzést ad az inicializáló metódus meghívásáról.
+	 * @brief Nem végez semmilyen mûveletet sem.
 	 */
 	virtual void initialize();
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a fûtõszál új állapotát.
+	 * @brief Nem végez semmilyen mûveletet sem.
 	 *
 	 * @param state A valóságban beállítani kívánt állapot.
 	 */
 	virtual void setHeaterState(bool state);
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a ventilátor új állapotát.
+	 * @brief Nem végez semmilyen mûveletet sem.
 	 *
-	 * @param state A valóságban kívánt állapot.
+	 * @param state A valóságban beállítani kívánt állapot.
 	 */
 	virtual void setFanState(bool state);
+
+	/**
+	 * @brief Nem végez semmilyen mûveletet sem.
+	 */
+	virtual void close();
 };
 
 #endif /* INC_ACTUATORMOCK_H_ */

@@ -27,6 +27,7 @@ void ActuatorModule::start() {
  * Leállítja a modul ütemezett mûködését.
  */
 void ActuatorModule::stop() {
+	componentInterface.close();
 	PeriodicTimer::stop();
 }
 

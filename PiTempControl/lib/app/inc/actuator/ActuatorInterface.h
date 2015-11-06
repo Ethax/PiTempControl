@@ -40,6 +40,11 @@ public:
 	 * @param state A beállítani kívánt állapot.
 	 */
 	virtual void setFanState(bool state) = 0;
+
+	/**
+	 * @brief Lezárja a mûködtetõ komponenst.
+	 */
+	virtual void close() = 0;
 };
 
 #endif /* INC_ACTUATORINTERFACE_H_ */

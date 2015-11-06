@@ -1,11 +1,15 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include <lib/app/inc/core/TemperatureControllerApplication.h>
+#include <lib/app/inc/core/AppException.h>
 
 #include <lib/comp_mock/inc/regulator/RegulatorMock.h>
 #include <lib/comp_mock/inc/sensor/SensorMock.h>
 #include <lib/comp_mock/inc/actuator/ActuatorMock.h>
 #include <lib/comp_mock/inc/display/DisplayMock.h>
+
+#include <lib/comp_impl/inc/actuator/ActuatorImpl.h>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -29,13 +33,13 @@ int main(int argc, char* argv[]) {
 #ifdef SUBSTITUTE_HARDWARE
 	RegulatorMock regulator;
 	SensorMock sensor;
-	ActuatorMock actuator;
+	ActuatorImpl actuator; // ActuatorMock
 	DisplayMock display;
 #else
-	RegulatorImpl regulator;
+	RegulatorMock regulator;
 	SensorImpl sensor;
 	ActuatorImpl actuator;
-	DisplayImpl display;
+	DisplayMock display;
 #endif
 	float setpoint;
 
@@ -43,7 +47,6 @@ int main(int argc, char* argv[]) {
 	parancssori argumentumok száma nem megfelelõ. */
 	if(argc != 3) {
 		cout << "Usage: tempcontrol -s <setpoint>" << endl;
-		cin.get();
 		exit(0);
 	}
 
@@ -55,33 +58,40 @@ int main(int argc, char* argv[]) {
 				setpoint = stof(string(argv[++i]));
 				if(setpoint < 0.0f || setpoint > 99.0f) {
 					cout << "Invalid setpoint. The value must be between 0 and 99." << endl;
-					cin.get();
 					exit(0);
 				}
 			}
 			else {
 				cout << "Not enough or invalid arguments." << endl;
-				cin.get();
 				exit(0);
 			}
 		}
 		catch(exception& e) {
 			cout << "An exception is thrown: " << e.what() << endl;
-			cin.get();
 			exit(0);
 		}
 	}
 	
 	/* Hõmérsékletszabályozó objektum lértrehozása a korábban létrehozott
-	komponensekkel, majd a hõmérsékletszabályozó elindtása. */
+	komponensekkel. */
 	TemperatureControllerApplication application(regulator, sensor, actuator, display, setpoint, 1.0f);
-	cout << "Application started." << endl;
-	application.start();
-	cin.get();
+#ifdef __linux__
+	system("clear");
+#endif
+	try {
+		/* A hõmérsékletszabályozó elindtása és futtatása valamelyik
+		billentyû leütéséig. */
+		cout << "Application started." << endl << endl;
+		application.start();
+		cin.get();
 	
-	/* A hõmérsékletszabályozó leállítása és az alkalmazás futásának
-	befejezése. */
-	cout << endl << "Application stopped." << endl;
-	application.stop();
+		/* A hõmérsékletszabályozó leállítása és az alkalmazás
+		futásának befejezése. */
+		cout << endl << "Application stopped." << endl;
+		application.stop();
+	}
+	catch(AppException& e) {
+		cout << e.getErrorMessage() << endl;
+	}
 	return 0;
 }

@@ -1,11 +1,12 @@
 #include <lib/comp_mock/inc/display/DisplayMock.h>
+#include <lib/app/inc/core/TextColoring.h>
 
 /*
  * Összeállítja a kiírni kívánt sort és elvégzi a kiíratást a konzol
  * képernyõre.
  */
 void DisplayMock::refreshDisplay(void) {
-	std::cout << '\r' << setpointIndicator << heaterIndicator << fanIndicator << temperatureIndicator;
+	std::cout << '\r' << setpointIndicator << heaterIndicator << fanIndicator << temperatureIndicator << std::flush;
 }
 
 /*
@@ -32,7 +33,9 @@ void DisplayMock::initialize() {}
  */
 void DisplayMock::refreshActualTemperature(const float _temp) {
 	std::stringstream stream;
-	stream << "[Temperature: " << std::fixed << std::setw(4) << std::setprecision(1) << _temp << " °C]";
+	stream << '[' << color::modifier(color::FG_CYAN) << "Temperature: ";
+	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _temp;
+	stream << color::modifier(color::FG_DEFAULT) << " °C]";
 	temperatureIndicator = stream.str();
 	refreshDisplay();
 }
@@ -42,7 +45,9 @@ void DisplayMock::refreshActualTemperature(const float _temp) {
  */
 void DisplayMock::refreshSetpoint(const float _setpoint) {
 	std::stringstream stream;
-	stream << "[Setpoint: " << std::fixed << std::setw(4) << std::setprecision(1) << _setpoint << " °C]";
+	stream << '[' << color::modifier(color::FG_CYAN) << "Setpoint: ";
+	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _setpoint;
+	stream << color::modifier(color::FG_DEFAULT) << " °C]";
 	setpointIndicator = stream.str();
 	refreshDisplay();
 }
@@ -57,7 +62,9 @@ void DisplayMock::refreshErrorLimit(const float _errorLimit) {}
  */
 void DisplayMock::refreshFanControllingValue(const bool _fan) {
 	std::stringstream stream;
-	stream << "[Fan: " << (_fan ? " ON]" : "OFF]");
+	stream << "[" << color::modifier(color::FG_CYAN) << "Fan: ";
+	stream << color::modifier(_fan ? color::FG_GREEN : color::FG_RED) << (_fan ? " ON" : "OFF");
+	stream << color::modifier(color::FG_DEFAULT) << "]";
 	fanIndicator = stream.str();
 	refreshDisplay();
 }
@@ -67,7 +74,9 @@ void DisplayMock::refreshFanControllingValue(const bool _fan) {
  */
 void DisplayMock::refreshHeaterControllingValue(const bool _heater) {
 	std::stringstream stream;
-	stream << "[Heater: " << (_heater ? " ON]" : "OFF]");
+	stream << "[" << color::modifier(color::FG_CYAN) << "Heater: ";
+	stream << color::modifier(_heater ? color::FG_GREEN : color::FG_RED) << (_heater ? " ON" : "OFF");
+	stream << color::modifier(color::FG_DEFAULT) << "]";
 	heaterIndicator = stream.str();
 	refreshDisplay();
 }

@@ -23,7 +23,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := PiTempControl.cpp
+SOURCEFILES := app/src/Main.cpp lib/app/src/actuator/ActuatorModule.cpp lib/app/src/core/BaseMessage.cpp lib/app/src/core/MessageReceiver.cpp lib/app/src/core/MessageSender.cpp lib/app/src/core/PeriodicTimer.cpp lib/app/src/core/TemperatureControllerApplication.cpp lib/app/src/display/DisplayModule.cpp lib/app/src/messages/ControlMessage.cpp lib/app/src/messages/SetupMessage.cpp lib/app/src/messages/TemperatureMessage.cpp lib/app/src/regulator/RegulatorModule.cpp lib/app/src/sensor/SensorModule.cpp lib/comp_mock/src/actuator/ActuatorMock.cpp lib/comp_mock/src/display/DisplayMock.cpp lib/comp_mock/src/regulator/RegulatorMock.cpp lib/comp_mock/src/sensor/SensorMock.cpp
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 
@@ -163,3 +163,72 @@ $(BINARYDIR)/%.o : %.cxx $(all_make_files) |$(BINARYDIR)
 	$(CC) $(CFLAGS) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 #VisualGDB: GeneratedRules				#<--- All lines below are auto-generated
+
+
+$(BINARYDIR)/Main.o : app/src/Main.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/ActuatorModule.o : lib/app/src/actuator/ActuatorModule.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/BaseMessage.o : lib/app/src/core/BaseMessage.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/MessageReceiver.o : lib/app/src/core/MessageReceiver.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/MessageSender.o : lib/app/src/core/MessageSender.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/PeriodicTimer.o : lib/app/src/core/PeriodicTimer.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/TemperatureControllerApplication.o : lib/app/src/core/TemperatureControllerApplication.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/DisplayModule.o : lib/app/src/display/DisplayModule.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/ControlMessage.o : lib/app/src/messages/ControlMessage.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/SetupMessage.o : lib/app/src/messages/SetupMessage.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/TemperatureMessage.o : lib/app/src/messages/TemperatureMessage.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/RegulatorModule.o : lib/app/src/regulator/RegulatorModule.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/SensorModule.o : lib/app/src/sensor/SensorModule.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/ActuatorMock.o : lib/comp_mock/src/actuator/ActuatorMock.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/DisplayMock.o : lib/comp_mock/src/display/DisplayMock.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/RegulatorMock.o : lib/comp_mock/src/regulator/RegulatorMock.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/SensorMock.o : lib/comp_mock/src/sensor/SensorMock.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+

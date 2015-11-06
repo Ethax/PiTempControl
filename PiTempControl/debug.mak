@@ -15,13 +15,13 @@ OBJCOPY := objcopy
 PREPROCESSOR_MACROS := DEBUG SUBSTITUTE_HARDWARE
 INCLUDE_DIRS := /home/pi/Workspace/PiTempControl
 LIBRARY_DIRS := 
-LIBRARY_NAMES := 
+LIBRARY_NAMES := bcm2835 rt
 ADDITIONAL_LINKER_INPUTS := 
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread
-CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread
+CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread -lrt
+CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O0 -pthread -lrt
 ASFLAGS := 
 LDFLAGS := -Wl,-gc-sections -pthread
 COMMONFLAGS := 
