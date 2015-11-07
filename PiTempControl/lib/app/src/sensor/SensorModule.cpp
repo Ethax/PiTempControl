@@ -29,6 +29,7 @@ void SensorModule::start() {
  * Leállítja a modul ütemezett mûködését.
  */
 void SensorModule::stop() {
+	componentInterface.close();
 	PeriodicTimer::stop();
 }
 

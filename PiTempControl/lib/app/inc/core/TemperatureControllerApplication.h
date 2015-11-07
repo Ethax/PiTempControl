@@ -27,7 +27,7 @@ class TemperatureControllerApplication {
 	/**
 	 * Az alkalmazáson belüli adatforgalmat lebonyolító objektum.
 	 */
-	MessageSender sender;
+	MessageSender messenger;
 	
 	/**
 	 * Az alkalmazás állapotait tároló Singleton.

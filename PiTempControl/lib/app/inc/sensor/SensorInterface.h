@@ -30,8 +30,15 @@ public:
 
 	/**
 	 * @brief Lekérdezi a hõmérõtõl az aktuális hõmérsékletet.
+	 *
+	 * @return A mért hõmérséklet.
 	 */
 	virtual float getTemperature() = 0;
+
+	/**
+	 * @brief Lezárja az érzékelõ komponenst.
+	 */
+	virtual void close() = 0;
 };
 
 #endif /* INC_SENSORINTERFACE_H_ */

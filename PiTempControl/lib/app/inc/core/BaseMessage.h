@@ -10,8 +10,8 @@ class MessageSender;
 * @class BaseMessage
 * @brief Az üzenetek õsosztálya.
 *
-* Az alkalmazáson belül a modulok közötti kommunikációt megvalósító üzenetek
-* mindegyike ebbõl az osztályból származik.
+* Az alkalmazáson belül a modulok közötti kommunikációt megvalósító
+* üzenetek mindegyike ebbõl az osztályból származik.
 */
 class BaseMessage {
 	/**

@@ -53,6 +53,7 @@ public:
 	 * @param actualTemperature Az aktuális hõmérséklet.
 	 * @param fanState A ventilátor jelenlegi állapota.
 	 * @param heaterState A fûtõszál jelenlegi állapota.
+	 * @return A beavatkozó jelek készlete.
 	 */
 	virtual std::set<ControlSignal> getControlSignal(const float actualTemperature, const bool fanState, const bool heaterState);
 };

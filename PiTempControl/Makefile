@@ -23,7 +23,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := app/src/Main.cpp lib/app/src/actuator/ActuatorModule.cpp lib/app/src/core/BaseMessage.cpp lib/app/src/core/MessageReceiver.cpp lib/app/src/core/MessageSender.cpp lib/app/src/core/PeriodicTimer.cpp lib/app/src/core/TemperatureControllerApplication.cpp lib/app/src/display/DisplayModule.cpp lib/app/src/messages/ControlMessage.cpp lib/app/src/messages/SetupMessage.cpp lib/app/src/messages/TemperatureMessage.cpp lib/app/src/regulator/RegulatorModule.cpp lib/app/src/sensor/SensorModule.cpp lib/comp_impl/src/actuator/ActuatorImpl.cpp lib/comp_mock/src/actuator/ActuatorMock.cpp lib/comp_mock/src/display/DisplayMock.cpp lib/comp_mock/src/regulator/RegulatorMock.cpp lib/comp_mock/src/sensor/SensorMock.cpp
+SOURCEFILES := app/src/Main.cpp lib/app/src/actuator/ActuatorModule.cpp lib/app/src/core/BaseMessage.cpp lib/app/src/core/MessageReceiver.cpp lib/app/src/core/MessageSender.cpp lib/app/src/core/PeriodicTimer.cpp lib/app/src/core/TemperatureControllerApplication.cpp lib/app/src/display/DisplayModule.cpp lib/app/src/messages/ControlMessage.cpp lib/app/src/messages/SetupMessage.cpp lib/app/src/messages/TemperatureMessage.cpp lib/app/src/regulator/RegulatorModule.cpp lib/app/src/sensor/SensorModule.cpp lib/comp_impl/src/actuator/ActuatorImpl.cpp lib/comp_impl/src/sensor/SensorImpl.cpp lib/comp_impl/src/sensor/SHT7xComm.cpp lib/comp_mock/src/actuator/ActuatorMock.cpp lib/comp_mock/src/display/DisplayMock.cpp lib/comp_mock/src/regulator/RegulatorMock.cpp lib/comp_mock/src/sensor/SensorMock.cpp
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 
@@ -218,6 +218,14 @@ $(BINARYDIR)/SensorModule.o : lib/app/src/sensor/SensorModule.cpp $(all_make_fil
 
 
 $(BINARYDIR)/ActuatorImpl.o : lib/comp_impl/src/actuator/ActuatorImpl.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/SensorImpl.o : lib/comp_impl/src/sensor/SensorImpl.cpp $(all_make_files) |$(BINARYDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
+
+
+$(BINARYDIR)/SHT7xComm.o : lib/comp_impl/src/sensor/SHT7xComm.cpp $(all_make_files) |$(BINARYDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 

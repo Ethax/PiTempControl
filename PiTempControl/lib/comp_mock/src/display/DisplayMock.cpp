@@ -2,21 +2,21 @@
 #include <lib/app/inc/core/TextColoring.h>
 
 /*
- * Összeállítja a kiírni kívánt sort és elvégzi a kiíratást a konzol
- * képernyõre.
+ * Összeállítja a kiírni kívánt sort a címkékbõl és elvégzi a kiíratást
+ * a konzol képernyõre.
  */
 void DisplayMock::refreshDisplay(void) {
-	std::cout << '\r' << setpointIndicator << heaterIndicator << fanIndicator << temperatureIndicator << std::flush;
+	std::cout << cret << setpointIndicator << heaterIndicator << fanIndicator << temperatureIndicator << std::flush;
 }
 
 /*
  * Az utánzat alapértelmezett konstruktora.
  */
 DisplayMock::DisplayMock() :
-	setpointIndicator("[Setpoint:  N/A \xC2\xB0""C]"),
+	setpointIndicator("[Setpoint:   N/A \xC2\xB0""C]"),
 	heaterIndicator("[Heater: N/A]"),
 	fanIndicator("[Fan: N/A]"),
-	temperatureIndicator("[Temperature:  N/A \xC2\xB0""C]") {}
+	temperatureIndicator("[Temperature:   N/A \xC2\xB0""C]") {}
 
 /*
  * Az utánzat virtuális destruktora.
@@ -24,41 +24,44 @@ DisplayMock::DisplayMock() :
 DisplayMock::~DisplayMock() {}
 
 /*
- * Jelzést ad az inicializáló metódus meghívásáról.
+ * Nem végez semmilyen mûveletet sem.
  */
 void DisplayMock::initialize() {}
 
 /*
- * Kiírja a konzol képernyõre a mért hõmérsékletet.
+ * Frissíti a hõmérséklet-címke tartalmát, ezt követõen pedig a konzol
+ * képernyõ tartalmát.
  */
 void DisplayMock::refreshActualTemperature(const float _temp) {
 	std::stringstream stream;
 	stream << '[' << color::modifier(color::FG_CYAN) << "Temperature: ";
-	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _temp;
+	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(5) << std::setprecision(2) << _temp;
 	stream << color::modifier(color::FG_DEFAULT) << " \xC2\xB0""C]";
 	temperatureIndicator = stream.str();
 	refreshDisplay();
 }
 
 /*
- * Kiírja a konzol képernyõre az alapjel értékét.
+ * Frissíti az alapjel-címke tartalmát, ezt követõen pedig a konzol
+ * képernyõ tartalmát.
  */
 void DisplayMock::refreshSetpoint(const float _setpoint) {
 	std::stringstream stream;
 	stream << '[' << color::modifier(color::FG_CYAN) << "Setpoint: ";
-	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(4) << std::setprecision(1) << _setpoint;
+	stream << color::modifier(color::FG_YELLOW) << std::fixed << std::setw(5) << std::setprecision(2) << _setpoint;
 	stream << color::modifier(color::FG_DEFAULT) << " \xC2\xB0""C]";
 	setpointIndicator = stream.str();
 	refreshDisplay();
 }
 
 /*
- * Kiírja a konzol képernyõre a megengedett pályakövetési hiba értékét.
+ * Nem végez semmilyen mûveletet sem.
  */
 void DisplayMock::refreshErrorLimit(const float _errorLimit) {}
 
 /*
- * Kiírja a konzol képernyõre a ventilátor állapotát.
+ * Frissíti az ventilátor-címke tartalmát, ezt követõen pedig a konzol
+ * képernyõ tartalmát.
  */
 void DisplayMock::refreshFanControllingValue(const bool _fan) {
 	std::stringstream stream;
@@ -70,7 +73,8 @@ void DisplayMock::refreshFanControllingValue(const bool _fan) {
 }
 
 /*
- * Kiírja a konzol képernyõre a fûtõszál állapotát.
+ * Frissíti az fûtõszál-címke tartalmát, ezt követõen pedig a konzol
+ * képernyõ tartalmát.
  */
 void DisplayMock::refreshHeaterControllingValue(const bool _heater) {
 	std::stringstream stream;

@@ -13,17 +13,17 @@ OBJCOPY := objcopy
 
 #Additional flags
 PREPROCESSOR_MACROS := NDEBUG RELEASE
-INCLUDE_DIRS := 
+INCLUDE_DIRS := /home/pi/Workspace/PiTempControl
 LIBRARY_DIRS := 
-LIBRARY_NAMES := 
+LIBRARY_NAMES := bcm2835 rt
 ADDITIONAL_LINKER_INPUTS := 
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -ffunction-sections -O3
-CXXFLAGS := -ggdb -ffunction-sections -O3
+CFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O3 -pthread -lrt
+CXXFLAGS := -ggdb -std=c++11 -Wall -ffunction-sections -O3 -pthread -lrt
 ASFLAGS := 
-LDFLAGS := -Wl,-gc-sections
+LDFLAGS := -Wl,-gc-sections -pthread
 COMMONFLAGS := 
 
 START_GROUP := -Wl,--start-group

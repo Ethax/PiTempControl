@@ -16,7 +16,6 @@
  * meghajtani.)
  */
 class ActuatorImpl : public ActuatorInterface {
-	
 public:
 	/**
 	 * @brief Az osztály alapértelmezett konstruktora.

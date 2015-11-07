@@ -2,39 +2,39 @@
 #include <lib/app/inc/core/AppException.h>
 
 /*
- * Az utánzat alapértelmezett konstruktora.
+ * Az osztály alapértelmezett konstruktora.
  */
 SensorImpl::SensorImpl() {}
 
 /*
- * Az utánzat virtuális destruktora.
+ * Az osztály virtuális destruktora.
  */
 SensorImpl::~SensorImpl() {}
 
 /*
- * Jelzést ad az inicializáló metódus meghívásáról.
+ * Inicializálja a hõmérséklet érzékelõ komponenst és felállítja a
+ * kommunikációt a hõmérõ eszközzel.
  */
 void SensorImpl::initialize() {
-	// Wait at least 11ms after power-up (chapter 3.1)
 	delay(20);
-
-	// Set up the SHT1x Data and Clock Pins
 	sensor.initializePins(RPI_GPIO_P1_16, RPI_GPIO_P1_18);
-
-	// Reset the SHT1x
 	sensor.reset();
 }
 
 /*
- * Szimulálja a hõmérséklet változását az aklamazás állapotaitól
- * függõen.
+ * Lekérdezi a hõmérõtõl az aktuális hõmérsékletet és visszaadja a
+ * Celsius fokokra átszámított értékét.
  */
 float SensorImpl::getTemperature() {
-	// Request Temperature measurement
 	if(!sensor.measureStart(SHT7xComm::MEASURE_TEMPERATURE))
 		throw AppException("Cannot start the temperature measurement.");
-
-	float temperature = sensor.getMeasureValue();
-
+	float temperature = (float)sensor.getMeasureValue();
 	return temperature * 0.01f - 39.7f;
+}
+
+/*
+ * Lezárja a kommunikációt az érzékelõvel.
+ */
+void SensorImpl::close() {
+	sensor.close();
 }

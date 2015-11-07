@@ -37,7 +37,7 @@ TemperatureControllerApplication::~TemperatureControllerApplication() {
  * Felveszi az átadott fogadót a feliratkozott fogadók közé.
  */
 void TemperatureControllerApplication::registerMessageReceiver(MessageReceiver& receiver) {
-	sender.registerMessageReceiver(receiver);
+	messenger.registerMessageReceiver(receiver);
 }
 
 /*
@@ -46,7 +46,7 @@ void TemperatureControllerApplication::registerMessageReceiver(MessageReceiver& 
  * sorban levõ üzenetek kézbesítését.
  */
 void TemperatureControllerApplication::sendMessage(std::shared_ptr<BaseMessage> message) {
-	sender.sendMessage(message);
+	messenger.sendMessage(message);
 }
 
 /*
@@ -65,10 +65,10 @@ void TemperatureControllerApplication::start() {
 	
 	/* Az alkalmazás moduljainak elindítása. */
 	regulatorModule->start();
-	sensorModule->start();
 	actuatorModule->start();
+	sensorModule->start();
 	displayModule->start();
-	sender.start();
+	messenger.start();
 
 	/* A fixált alapjel beállítása az alkalmazás állapotait
 	tároló objektumban és új beállító üzenetek küldése a módosítások
@@ -86,9 +86,9 @@ void TemperatureControllerApplication::stop() {
 	stopped = true;
 
 	/* Az alkalmazás moduljainak leállítása. */
-	sender.stop();
+	messenger.stop();
 	regulatorModule->stop();
-	sensorModule->stop();
 	actuatorModule->stop();
+	sensorModule->stop();
 	displayModule->stop();
 }

@@ -113,7 +113,7 @@
       <Filter>Source files\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="lib\comp_impl\src\sensor\SHT7xComm.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source files\Sensor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +205,7 @@
       <Filter>Header files\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="lib\comp_impl\inc\sensor\SHT7xComm.h">
-      <Filter>Header files</Filter>
+      <Filter>Header files\Sensor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

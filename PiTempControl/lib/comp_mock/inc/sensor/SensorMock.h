@@ -46,8 +46,15 @@ public:
 	/**
 	 * @brief Szimulálja a hõmérséklet változását az aklamazás
 	 * állapotaitól függõen.
+	 *
+	 * @return A szimulált hõmérséklet Celsius fokokban.
 	 */
 	virtual float getTemperature();
+
+	/**
+	 * @brief Nem végez semmilyen mûveletet sem.
+	 */
+	virtual void close();
 };
 
 #endif /* INC_SENSORMOCK_H_ */

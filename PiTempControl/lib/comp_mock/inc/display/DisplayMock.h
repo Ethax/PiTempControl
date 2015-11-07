@@ -4,6 +4,8 @@
 #include <lib/app/inc/common.h>
 #include <lib/app/inc/display/DisplayInterface.h>
 
+#define cret '\r'
+
 /**
  * @class DisplayMock
  * @brief A kijelzõ komponens mûködését utánzó osztály.
@@ -12,14 +14,29 @@
  * viselkedését elõre meghatározott módon utánozza.
  */
 class DisplayMock : public DisplayInterface {
+	/**
+	 * Az alapjelre vonatkozó információt megjelenítõ címke puffere.
+	 */
 	std::string setpointIndicator;
+
+	/**
+	 * A fûtõszálra vonatkozó információt megjelenítõ címke puffere.
+	 */
 	std::string heaterIndicator;
+	
+	/**
+	 * Az ventilárra vonatkozó információt megjelenítõ címke puffere.
+	 */
 	std::string fanIndicator;
+
+	/**
+	 * Az hõmérsékletre vonatkozó információt megjelenítõ címke puffere.
+	 */
 	std::string temperatureIndicator;
 
 	/**
-	 * @brief Összeállítja a kiírni kívánt sort és elvégzi a
-	 * kiíratást a konzol képernyõre.
+	 * @brief Összeállítja a kiírni kívánt sort a címkékbõl és
+	 * elvégzi a kiíratást a konzol képernyõre.
 	 */
 	void refreshDisplay(void);
 
@@ -35,41 +52,44 @@ public:
 	virtual ~DisplayMock();
 
 	/**
-	 * @brief Jelzést ad az inicializáló metódus meghívásáról.
+	 * @brief Nem végez semmilyen mûveletet sem.
 	 */
 	virtual void initialize();
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a mért hõmérsékletet.
+	 * @brief Frissíti a hõmérséklet-címke tartalmát, ezt követõen
+	 * pedig a konzol képernyõ tartalmát.
 	 *
 	 * @param _temp A mért hõmérséklet értéke.
 	 */
 	virtual void refreshActualTemperature(const float _temp);
 
 	/**
-	 * @brief Kiírja a konzol képernyõre az alapjel értékét.
+	 * @brief Frissíti az alapjel-címke tartalmát, ezt követõen
+	 * pedig a konzol képernyõ tartalmát.
 	 *
 	 * @param _setpoint Az alapjel értéke.
 	 */
 	virtual void refreshSetpoint(const float _setpoint);
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a megengedett pályakövetési
-	 * hiba értékét.
+	 * @brief Nem végez semmilyen mûveletet sem.
 	 *
 	 * @param _errorLimit A megengedett pályakövetési hiba értéke.
 	 */
 	virtual void refreshErrorLimit(const float _errorLimit);
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a ventilátor állapotát.
+	 * @brief Frissíti az ventilátor-címke tartalmát, ezt követõen
+	 * pedig a konzol képernyõ tartalmát.
 	 *
 	 * @param _fan A ventilátor aktuális állapota.
 	 */
 	virtual void refreshFanControllingValue(const bool _fan);
 
 	/**
-	 * @brief Kiírja a konzol képernyõre a fûtõszál állapotát.
+	 * @brief Frissíti az fûtõszál-címke tartalmát, ezt követõen
+	 * pedig a konzol képernyõ tartalmát.
 	 *
 	 * @param _heater A fûtõszál aktuális állapota.
 	 */

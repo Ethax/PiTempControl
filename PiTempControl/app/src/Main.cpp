@@ -10,6 +10,7 @@
 #include <lib/comp_mock/inc/display/DisplayMock.h>
 
 #include <lib/comp_impl/inc/actuator/ActuatorImpl.h>
+#include <lib/comp_impl/inc/sensor/SensorImpl.h>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -33,13 +34,15 @@ int main(int argc, char* argv[]) {
 #ifdef SUBSTITUTE_HARDWARE
 	RegulatorMock regulator;
 	SensorMock sensor;
-	ActuatorImpl actuator; // ActuatorMock
+	ActuatorMock actuator;
 	DisplayMock display;
+	float errorLimit = 1.5f;
 #else
 	RegulatorMock regulator;
 	SensorImpl sensor;
 	ActuatorImpl actuator;
 	DisplayMock display;
+	float errorLimit = 0.25f;
 #endif
 	float setpoint;
 
@@ -74,7 +77,7 @@ int main(int argc, char* argv[]) {
 	
 	/* Hõmérsékletszabályozó objektum lértrehozása a korábban létrehozott
 	komponensekkel. */
-	TemperatureControllerApplication application(regulator, sensor, actuator, display, setpoint, 1.0f);
+	TemperatureControllerApplication application(regulator, sensor, actuator, display, setpoint, errorLimit);
 #ifdef __linux__
 	system("clear");
 #endif
@@ -93,5 +96,10 @@ int main(int argc, char* argv[]) {
 	catch(AppException& e) {
 		cout << e.getErrorMessage() << endl;
 	}
+	catch(...) {
+		cout << endl << "Application terminated with an unexpected error." << endl;
+	}
+
+	/* Az alkalmazás futásának befejezése. */
 	return 0;
 }

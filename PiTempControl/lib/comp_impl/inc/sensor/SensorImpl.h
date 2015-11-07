@@ -6,10 +6,11 @@
 
 /**
 * @class SensorMock
-* @brief Az érzékelõ komponens mûködését utánzó osztály.
+* @brief Az érzékelõ komponenst megvalósító osztály.
 *
-* Ez az osztály tesztelési feladatok ellátására szolgál, az érzékelõ
-* viselkedését elõre meghatározott módon utánozza.
+* Ez az osztály egy SENSIRION SHT7x digitális hõmérséklet és páratartalom
+* érzékelõ segítségével megméri a környezet hõmérsékletét és visszaadja
+* a korrigált értéket Celsius fokokban.
 */
 class SensorImpl : public SensorInterface {
 	/**
@@ -19,25 +20,33 @@ class SensorImpl : public SensorInterface {
 
 public:
 	/**
-	 * @brief Az utánzat alapértelmezett konstruktora.
+	 * @brief Az osztály alapértelmezett konstruktora.
 	 */
 	SensorImpl();
 	
 	/**
-	 * @brief Az utánzat virtuális destruktora.
+	 * @brief Az osztály virtuális destruktora.
 	 */
 	virtual ~SensorImpl();
 
 	/**
-	 * @brief Jelzést ad az inicializáló metódus meghívásáról.
+	 * @brief Inicializálja a hõmérséklet érzékelõ komponenst és
+	 * felállítja a kommunikációt a hõmérõ eszközzel.
 	 */
 	virtual void initialize();
 
 	/**
-	 * @brief Szimulálja a hõmérséklet változását az aklamazás
-	 * állapotaitól függõen.
+	 * @brief Lekérdezi a hõmérõtõl az aktuális hõmérsékletet és
+	 * visszaadja a Celsius fokokra átszámított értékét.
+	 *
+	 * @return A mért hõmérséklet Celsius fokokban.
 	 */
 	virtual float getTemperature();
+
+	/**
+	 * @brief Lezárja a kommunikációt az érzékelõvel.
+	 */
+	virtual void close();
 };
 
 #endif /* INC_SENSORIMPL_H_ */

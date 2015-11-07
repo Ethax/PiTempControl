@@ -85,7 +85,7 @@ public:
 	* @brief Fogadja és feldolgozza a beállítás típusú üzeneteket.
 	*
 	* A beállítás típusú üzenetekbõl kinyeri a beállítások fajtáját és
-	* azok értéket, amiket a konkrét komponenstõl függõen igény szerint
+	* azok értékét, amiket a konkrét komponenstõl függõen igény szerint
 	* megjeleníthet a felhasználó számára.
 	*
 	* @param msg Az üzenetre mutató referencia.
